@@ -1,6 +1,7 @@
 import React from 'react'
 import { Theme } from './Theme'
 import { Button } from './components/shared/Button'
+import { Search } from './components/shared/Search'
 
 // Custom Props with TypeScript
 interface AppProps {
@@ -11,7 +12,7 @@ const TestsApp: React.FC<AppProps> = (props) => {
     return (
         <Theme>
             <p>hello world</p>
-            <Button textColor="white" bgColor="lightblue">press</Button>
+            <Search placeholder="Search a Pokemon"></Search>
         </Theme>
     )
 }
