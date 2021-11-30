@@ -1,6 +1,5 @@
 import React from 'react'
 import { Theme } from './Theme'
-import { Button } from './components/shared/Button'
 import { Search } from './components/shared/Search'
 
 // Custom Props with TypeScript
@@ -12,7 +11,10 @@ const TestsApp: React.FC<AppProps> = (props) => {
     return (
         <Theme>
             <p>hello world</p>
-            <Search placeholder="Search a Pokemon"></Search>
+            <div>
+                <span>Poke API</span>
+                <Search placeholder="Search a Pokemon"></Search>
+            </div>
         </Theme>
     )
 }
