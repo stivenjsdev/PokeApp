@@ -19,6 +19,10 @@ const myTheme: DefaultTheme = {
             ligthen: '#F5F8FA'
         }
     },
+    shadows : {
+        elevate: '2px 2px 3px rgba(1, 35, 97, 0.25), -2px -2px 3px #FFFFFF',
+        down: '1px 1px 2px rgba(1, 35, 97, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.75)'
+    },
     sizes: {
         xxl: 41,
         xl: 30,
