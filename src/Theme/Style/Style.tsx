@@ -4,6 +4,10 @@ import { normalize } from './normalize'
 const GlobalStyle = createGlobalStyle`
     ${normalize}
 
+    * {
+        box-sizing: border-box;
+    }
+
     body {
         font-family: 'Grenze Gotisch', cursive;
         /*font-family: 'Grenze', serif;*/
