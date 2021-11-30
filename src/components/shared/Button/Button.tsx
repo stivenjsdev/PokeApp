@@ -1,15 +1,24 @@
 import React from 'react'
-import * as Types from './Button.dto'
+import * as Types from './Button.type'
 import * as Styled from './Button.styled'
 
-export const Button: React.FC<Types.Button> = ({ 
+export const Button = ({ 
     children, 
     bgColor = 'white',
-    textColor = 'red',
-}) => {
+    textColor = 'black',
+    border = '1px solid lightgray',
+    bgColorHover = 'lightgray',
+    ...properties
+}: Types.Button): JSX.Element => {
     return (
-        <Styled.NewButton textColor={ textColor } bgColor={ bgColor }>
+        <Styled.Button 
+            textColor={ textColor } 
+            bgColor={ bgColor }
+            border={ border }
+            bgColorHover={ bgColorHover }
+            {...properties}
+        >
             { children }
-        </Styled.NewButton>
+        </Styled.Button>
     )
 }
