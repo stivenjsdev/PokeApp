@@ -2,7 +2,10 @@ import 'styled-components'
 
 declare module 'styled-components' {
     export interface DefaultTheme {
-        font: string;
+        fonts: {
+            primary: string;
+            secondary: string;
+        };
         borderRadius: string;
         colors: {
             main: string;

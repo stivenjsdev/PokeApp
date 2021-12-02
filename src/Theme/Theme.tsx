@@ -2,7 +2,10 @@ import { ThemeProvider, DefaultTheme } from 'styled-components'
 import { GlobalStyle } from './Style'
 
 const myTheme: DefaultTheme = {
-    font: "'Grenze Gotisch', cursive",
+    fonts: {
+        primary: "'Grenze Gotisch', cursive",
+        secondary: "'Grenze', serif;"
+    },
     borderRadius: '5px',
     colors: {
         main: '#1159F5',
