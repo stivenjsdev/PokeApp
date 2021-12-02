@@ -7,7 +7,7 @@ export const Input = styled.input<Types.StyledInput>`
     font-size: ${props => props.theme.sizes.m + 'px'};
     border-radius: ${props => props.theme.borderRadius || '2px'};
     margin: 0;
-    padding: ${props => props.padding || '6px'};
+    padding: ${props => props.padding};
     font-family: 'Grenze', serif;
     font-weight: 200;
     border: none;

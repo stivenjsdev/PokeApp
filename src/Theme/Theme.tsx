@@ -6,7 +6,10 @@ const myTheme: DefaultTheme = {
         primary: "'Grenze Gotisch', cursive",
         secondary: "'Grenze', serif;"
     },
-    borderRadius: '5px',
+    borderRadius: {
+        normal: '5px',
+        card: '16px'
+    },
     colors: {
         main: '#1159F5',
         primary: '#1159F5',
@@ -24,7 +27,8 @@ const myTheme: DefaultTheme = {
     },
     shadows : {
         elevate: '2px 2px 3px rgba(1, 35, 97, 0.25), -2px -2px 3px #FFFFFF',
-        down: '1px 1px 2px rgba(1, 35, 97, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.75)'
+        down: '1px 1px 2px rgba(1, 35, 97, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.75)',
+        card: '0 0px 10px 0 rgb(0 0 0 / 20%)'
     },
     sizes: {
         xxl: 41,
