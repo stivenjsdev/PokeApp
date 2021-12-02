@@ -3,8 +3,8 @@ import * as Styled from './Input.styled'
 import * as Types from './Input.type'
 
 export const Input = ({
-    padding,
-    bgColor='white', 
+    padding = '6px',
+    bgColor='white',
     ...properties 
 }: Types.Input): JSX.Element => {
     return (
