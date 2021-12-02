@@ -28,6 +28,7 @@ const getPokemonByName = async (name: string) => {
 
 export const Search = ({ 
     placeholder,
+    bgColor,
     ...properties
 }: Types.Search): JSX.Element => {
     
@@ -58,12 +59,13 @@ export const Search = ({
                 padding="6px 6px 6px 35px"
                 value={ value }
                 onChange={ handleChange }
+                bgColor={ bgColor }
             />
             <SearchButton 
                 border="none" 
                 type="submit"
+                bgColor={ bgColor }
             />
-            <p>{JSON.stringify(pokemon)}</p>
         </Styled.SearchForm>
     )
 }
