@@ -6,7 +6,10 @@ declare module 'styled-components' {
             primary: string;
             secondary: string;
         };
-        borderRadius: string;
+        borderRadius: {
+            normal: string;
+            card: string;
+        };
         colors: {
             main: string;
             primary: string;
@@ -25,6 +28,7 @@ declare module 'styled-components' {
         shadows : {
             elevate: string;
             down: string;
+            card: string;
         };
         sizes: {
             xxl: number;
