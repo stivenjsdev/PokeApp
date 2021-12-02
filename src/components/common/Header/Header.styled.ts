@@ -7,7 +7,6 @@ export const Header = styled.header`
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    min-height: 65px;
     padding: 5px 16px;
     border-bottom: 1px solid lightgray;
     box-shadow: lightgrey 0px 0px 16px 1.8px;
