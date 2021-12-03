@@ -11,7 +11,7 @@ interface AppProps {
 const TestsApp: React.FC<AppProps> = (props) => {
     return (
         <Theme>
-            <Header />
+            {/* <Header /> */}
             <PokemonCard 
                 image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" 
                 name="pikachu"
