@@ -1,40 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Theme } from '../../Theme'
-import { PokemonCard } from '../common/PokemonCard'
+import { PokemonProvider } from '../../Context'
 import * as Styled from './App.styled'
 
-const examplePokemon = {
-  image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
-  name: 'pikachu',
-  types: 'electric'
-}
-
-const App = () => {
-  const [state, setState] = useState(examplePokemon)
-  const { image, name, types } = state;
-
-  const getPokemon = async (pokemon: any) => {
-    setState(pokemon)
-  }
+const App = (): JSX.Element => {
 
   return (
     <Theme>
-      <Styled.App>
-        <Styled.Header getPokemon={getPokemon} />
+      <PokemonProvider>
+        <Styled.App>
+          <Styled.Header />
 
-        <Styled.Sidebar>
-          <PokemonCard
-            image={ image }
-            name={ name }
-            types={ types }
-            bgColor="#F5F8FA"
-          />
-        </Styled.Sidebar>
+          <Styled.Sidebar />
 
-        <Styled.StyledMain>
+          <Styled.StyledMain>
 
-        </Styled.StyledMain>
-      </Styled.App>
+          </Styled.StyledMain>
+        </Styled.App>
+      </PokemonProvider>
     </Theme>
   )
 }

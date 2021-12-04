@@ -9,7 +9,7 @@ export const App = styled.div`
         'sidebar'
         'main'
     ;
-    grid-template-rows: 80px auto auto;
+    grid-template-rows: 80px min-content auto;
     height: 100vh;
     /* grid-gap: 10px; */
 
