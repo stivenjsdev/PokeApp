@@ -3,36 +3,13 @@ import * as Styled from './Search.styled'
 import * as Types from './Search.type'
 import { SearchButton } from '../SearchButton'
 import { Input } from '../Input'
+import { usePokemonContext } from '../../../Context'
 
 // Extract event types
 type InputEvent = React.ChangeEvent<HTMLInputElement>
 type FormEvent = React.FormEvent<HTMLFormElement>
 
-// API Request Function
-const URLPOKEMONAPI = 'https://pokeapi.co/api/v2/pokemon/'
-interface Pokemon {
-    image: string;
-    name: string;
-    // types: Array<any>
-    types: string;
-}
-const getPokemonByName = async (name: string) => {
-    const response = await fetch(URLPOKEMONAPI + name)
-    const data = await response.json()
-    const pokemon: Pokemon = {
-        image: data.sprites.front_default,
-        name: data.name,
-        // types: data.types
-        types: data.types.length > 1
-            ? `${data.types[0].type.name}   ${data.types[1].type.name}`
-            : data.types[0].type.name
-    }
-    console.log(pokemon) // Delete This
-    return pokemon
-}
-
 export const Search = ({
-    getPokemon,
     placeholder,
     bgColor,
     ...properties
@@ -40,6 +17,9 @@ export const Search = ({
     
     // State
     const [value, setValue] = useState('')
+
+    // Context
+    const { searchPokemon } = usePokemonContext()
 
     // Form handle change function
     const handleChange = (event: InputEvent) => {
@@ -49,10 +29,10 @@ export const Search = ({
     // Form handle submit function
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault()
-        // submit(value) /doing/ send captured value up or create a function that makes api request
-        const response = await getPokemonByName(value.toLowerCase())
-        getPokemon(response)
-        setValue('')
+        if (value) {
+            searchPokemon(value.toLowerCase())
+            setValue('')
+        }
     }
 
     return (
@@ -63,6 +43,7 @@ export const Search = ({
                 value={ value }
                 onChange={ handleChange }
                 bgColor={ bgColor }
+                required
             />
             <SearchButton 
                 border="none" 
