@@ -1,46 +1,107 @@
-# Getting Started with Create React App
+# Poke APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Poke App is a responsive application created with React, TypeScript and Styled Components, using the poke api.
 
-## Available Scripts
+You can search for your favorite Pokemon or go into tall grass and find it randomly.
 
-In the project directory, you can run:
+## Deployment
 
-### `yarn start`
+https://ourpokeapp.netlify.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setting
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Node version: 14.18.1
+- Yarn version: 1.22.15
 
-### `yarn test`
+Install yarn via npm:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm install --global yarn
+```
 
-### `yarn build`
+Visual Studio Code Plugins: 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ES7 React/Redux/GraphQL/React-Native snippets
+- Typescript React code snippets
+- styled-components-snippets
+- vscode-styled-components
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Git Flow:
+```
+https://danielkummer.github.io/git-flow-cheatsheet/
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to start
 
-### `yarn eject`
+Clone the repo:
+```
+https://github.com/stivenjsdev/PokeApp.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Install dependencies:
+```
+yarn or yarn install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can start the project and run server with the command:
+```
+yarn start or yarn run start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Open http://localhost:3000 to view it in the browser.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Annotations
 
-## Learn More
+## Yarn
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Starting a new project:
+```
+yarn init
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Adding a dependency:
+```
+yarn add [package]
+yarn add [package] --dev
+yarn add [package]@[version]
+```
+
+Upgrading a dependency:
+```
+yarn upgrade [package]
+yarn upgrade [package]@[version]
+```
+
+Removing a dependency:
+```
+yarn remove [package]
+```
+
+Install all the dependencies of project
+```
+yarn
+```
+
+## React with TypeScript
+
+Local dev setups:
+- Create React App:
+```
+npx create-react-app [app-name] --template typescript
+```
+
+## Styled Components
+
+Installation:
+```
+yarn add styled-components
+```
+
+Types:
+```
+yarn add -D @types/styled-components
+```
+or
+```
+yarn add --dev @types/styled-components
+```
