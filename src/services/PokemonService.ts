@@ -7,6 +7,7 @@ export const getPokemonByName = async (name: string | number) => {
         const response = await fetch(URLPOKEMONAPI + name)
         const data = await response.json()
         const pokemon: IPokemon = {
+            id: data.id,
             // image: data.sprites.front_default,
             // image: data.sprites.other.dream_world.front_default,
             image: data.sprites.other['official-artwork'].front_default,
@@ -16,7 +17,7 @@ export const getPokemonByName = async (name: string | number) => {
                 ? `${data.types[0].type.name}  -  ${data.types[1].type.name}`
                 : data.types[0].type.name
         }
-        console.log(pokemon) // Delete This
+        console.log({pokemon}) // Delete This
         return pokemon
     } catch (error) {
         console.log({error})
