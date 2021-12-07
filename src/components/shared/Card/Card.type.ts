@@ -6,7 +6,7 @@ export interface StyledCard {
     readonly width?: string;
 }
 
-export interface Card extends StyledCard {
+export interface Card extends React.HTMLAttributes<HTMLElement>, StyledCard {
     children?: React.ReactNode;
     className?: string;
 }
