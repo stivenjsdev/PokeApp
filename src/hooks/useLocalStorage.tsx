@@ -28,7 +28,7 @@ export const useLocalStorage = <T extends unknown>(itemName: string, initialValu
             const stringifiedItem = JSON.stringify(newItem)
             localStorage.setItem(itemName, stringifiedItem)
             setItem(newItem)
-            console.log({message: 'PokeTeam Saved'})
+            console.log({message: 'Item Saved'})
         } catch (error) {
             setError(true)
             console.log({error})
