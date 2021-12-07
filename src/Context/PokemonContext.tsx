@@ -22,8 +22,13 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
     } = useLocalStorage<IPokemon[]>('POKETEAM_V1', [])
 
     const catchPokemon = (pokemon: IPokemon) => {
-        const newPokeTeam = [...pokeTeam, pokemon]
-        savePokeTeam(newPokeTeam)
+        const hasPokemon = pokeTeam.find(elem => elem.id === pokemon.id)
+        if (hasPokemon) {
+            console.error({error: 'pokemon already exists'})
+        } else {
+            const newPokeTeam = [...pokeTeam, pokemon]
+            savePokeTeam(newPokeTeam)
+        }
     }
     const deletePokemon = (pokemonId: number) => {
         const newPokeTeam = pokeTeam.filter(pokemon => pokemon.id !== pokemonId)
