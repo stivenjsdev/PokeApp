@@ -1,42 +1,47 @@
-import React, { useState, createContext, useContext, useEffect } from 'react'
+import React, { createContext, useContext } from 'react'
 import { IPokemon } from '../types/IPokemon'
-import { getPokemonByName } from '../services/PokemonService'
 import * as Types from './PokemonContext.type'
+import { useLocalStorage } from '../hooks/useLocalStorage'
+import { usePokemonSearch } from '../hooks/usePokemonSearch'
 
 export const PokemonContext = createContext<Types.PokemonContext>({} as Types.PokemonContext)
 
 export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
-    const [pokemon, setPokemon] = useState<IPokemon | undefined>(undefined)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(false)
+    const {
+        pokemon,
+        loading: searchLoading,
+        error: searchError,
+        searchPokemon
+    } = usePokemonSearch()
+    
+    const {
+        item: pokeTeam,
+        saveItem: savePokeTeam,
+        loading: saveLoading,
+        error: saveError
+    } = useLocalStorage<IPokemon[]>('POKETEAM_V1', [])
 
-    const searchPokemon = async (pokemonName: string | number) => {
-            setLoading(true)
-            setError(false)
-            const pokemon = await getPokemonByName(pokemonName)
-            if (!pokemon) {
-                setError(true)
-                setPokemon(pokemon)
-                setLoading(false)
-            } else {
-                setError(false)
-                setPokemon(pokemon)
-                setLoading(false)
-            }
+    const catchPokemon = (pokemon: IPokemon) => {
+        const newPokeTeam = [...pokeTeam, pokemon]
+        savePokeTeam(newPokeTeam)
     }
-
-    useEffect(() => {
-        const pokemonId = Math.floor(Math.random() * 897) + 1;
-        searchPokemon(pokemonId)
-    }, [])
-
+    const deletePokemon = (pokemonId: number) => {
+        const newPokeTeam = pokeTeam.filter(pokemon => pokemon.id !== pokemonId)
+        savePokeTeam(newPokeTeam)
+    }
 
     return (
         <PokemonContext.Provider value={{
             pokemon,
             searchPokemon,
-            loading,
-            error
+            searchLoading,
+            searchError,
+            pokeTeam,
+            savePokeTeam,
+            saveLoading,
+            saveError,
+            catchPokemon,
+            deletePokemon
         }}>
             { children }
         </PokemonContext.Provider>
