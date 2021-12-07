@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Header as SimpleHeader } from '../common/Header'
 import { Sidebar as SimpleSidebar } from '../common/Sidebar'
+import { PokemonTeam } from '../common/PokemonTeam/'
 
 export const App = styled.div`
     display: grid;
@@ -30,7 +31,6 @@ export const Header = styled(SimpleHeader)`
 export const Sidebar = styled(SimpleSidebar)`
     grid-area: sidebar;
 `
-export const StyledMain = styled.div`
+export const StyledMain = styled(PokemonTeam)`
     grid-area: main;
-    background-color: transparent;
 `

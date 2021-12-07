@@ -6,16 +6,17 @@ export const Sidebar = styled.aside`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 15px 0px;
     
     background-color: ${props => props.theme.colors.white};
     padding: 10px;
 `
 
 export const Message = styled.p`
-    margin: 5px 0;
+    /* margin: 5px 0; */
 `
 
 export const Button = styled(SimpleButton)`
-    margin: 5px 0;
+    /* margin: 5px 0; */
     border-radius:0.12em;
 `
