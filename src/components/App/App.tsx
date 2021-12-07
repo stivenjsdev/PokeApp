@@ -13,9 +13,7 @@ const App = (): JSX.Element => {
 
           <Styled.Sidebar />
 
-          <Styled.StyledMain>
-
-          </Styled.StyledMain>
+          <Styled.StyledMain />
         </Styled.App>
       </PokemonProvider>
     </Theme>
