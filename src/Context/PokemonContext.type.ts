@@ -1,8 +1,9 @@
-import { IPokemon } from "../types/IPokemon";
+import { IPokemon } from "../interfaces/IPokemon";
 
 export interface PokemonContext {
     pokemon: IPokemon | undefined;
     searchPokemon: (pokemonName: string | number) => void;
+    searchRandomPokemon: () => void;
     searchLoading: boolean;
     searchError: boolean;
     pokeTeam: IPokemon[];

@@ -2,10 +2,8 @@ import styled from 'styled-components'
 import * as Types from './Card.type'
 
 export const Card = styled.div<Types.StyledCard>`
-    width: ${props => props.width};
-    border: 1px solid ${props => props.borderColor};
-    border-radius: ${props => props.theme.borderRadius};
-
-    background-color: ${props => props.bgColor};
+    width: 160px;
+    border: 1px solid ${props => props.theme.colors.gray.middle};
+    border-radius: ${props => props.theme.borderRadius.card};
     padding: 10px;
 `

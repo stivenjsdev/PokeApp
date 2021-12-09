@@ -2,18 +2,16 @@ import React from 'react'
 import * as Styled from './PokemonCard.styled'
 import * as Types from './PokemonCard.type'
 import { usePokemonContext } from '../../../Context'
+import { Icon, IconColor, IconSize } from '../../shared/IconButton/IconButton.type'
 
 export const PokemonCard = ({
     pokemon,
-    type,
+    cardType,
     ...properties
 }: Types.PokemonCard) => {
     const { catchPokemon, deletePokemon } = usePokemonContext()
     return (
-        <Styled.Card 
-            bgColor={type === Types.CardType.A ? '#F5F8FA' : 'white'} 
-            {...properties}
-        >
+        <Styled.Card cardType={cardType} {...properties}>
             {
                 pokemon
                     ? <>
@@ -22,20 +20,22 @@ export const PokemonCard = ({
                             alt="pokemon image"
                         />
                         <Styled.Title>{pokemon.name}</Styled.Title>
-                        <Styled.Types>{pokemon.types}</Styled.Types>
-                        {type === Types.CardType.A && 
-                            <Styled.AddButton 
+                        <Styled.PokemonTypes>{pokemon.types}</Styled.PokemonTypes>
+                        {cardType === Types.CardType.PREVIEW && 
+                            <Styled.AddButton
+                                icon={Icon.PLUS}
+                                iconSize={IconSize.NORMAL}
+                                iconColor={IconColor.WHITE}
                                 onClick={() => catchPokemon(pokemon)}
-                            >
-                                <i className="fa fa-plus"></i>
-                            </Styled.AddButton>
+                            />
                         }
-                        {type === Types.CardType.B &&
+                        {cardType === Types.CardType.TEAM &&
                             <Styled.DeleteButton
+                                icon={Icon.TRASH}
+                                iconSize={IconSize.NORMAL}
+                                iconColor={IconColor.WHITE}
                                 onClick={() => deletePokemon(pokemon.id) }
-                            >
-                                <i className="fa fa-trash"></i>
-                            </Styled.DeleteButton>
+                            />
                         }
                     </>
                     : <Styled.NotFoundText>not found</Styled.NotFoundText>

@@ -12,11 +12,6 @@ export const Sidebar = styled.aside`
     padding: 10px;
 `
 
-export const Message = styled.p`
-    /* margin: 5px 0; */
-`
+export const Message = styled.p``
 
-export const Button = styled(SimpleButton)`
-    /* margin: 5px 0; */
-    border-radius:0.12em;
-`
+export const Button = styled(SimpleButton)``

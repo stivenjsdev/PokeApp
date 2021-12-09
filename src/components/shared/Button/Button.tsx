@@ -4,18 +4,12 @@ import * as Styled from './Button.styled'
 
 export const Button = ({ 
     children, 
-    bgColor = 'white',
-    textColor = 'black',
-    border = '1px solid lightgray',
-    bgColorHover = 'lightgray',
+    buttonType,
     ...properties
 }: Types.Button): JSX.Element => {
     return (
         <Styled.Button 
-            textColor={ textColor } 
-            bgColor={ bgColor }
-            border={ border }
-            bgColorHover={ bgColorHover }
+            buttonType={ buttonType }
             {...properties}
         >
             { children }

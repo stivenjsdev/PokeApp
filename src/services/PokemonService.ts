@@ -1,4 +1,4 @@
-import { IPokemon } from '../types/IPokemon'
+import { IPokemon } from '../interfaces/IPokemon'
 
 const URLPOKEMONAPI = 'https://pokeapi.co/api/v2/pokemon/'
 
@@ -17,7 +17,7 @@ export const getPokemonByName = async (name: string | number) => {
                 ? `${data.types[0].type.name}  -  ${data.types[1].type.name}`
                 : data.types[0].type.name
         }
-        console.log({pokemon}) // Delete This
+        console.log({foundPokemon: pokemon}) // Delete This
         return pokemon
     } catch (error) {
         console.log({error})
