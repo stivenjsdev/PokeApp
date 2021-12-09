@@ -1,5 +1,5 @@
 import { ThemeProvider, DefaultTheme } from 'styled-components'
-import { GlobalStyle } from './Style'
+import { GlobalStyle } from './GlobalStyle'
 
 const myTheme: DefaultTheme = {
     fonts: {
@@ -8,7 +8,8 @@ const myTheme: DefaultTheme = {
     },
     borderRadius: {
         normal: '5px',
-        card: '16px'
+        card: '16px',
+        search: '2px'
     },
     colors: {
         main: '#1159F5',
@@ -17,12 +18,14 @@ const myTheme: DefaultTheme = {
         accent: '#28D8A1',
         white: '#FFF',
         black: '#000',
-        red: '#FF8888',
+        green: '#0C9',
+        red: 'lightcoral',
         gray: {
-            darken: '#373B42',
+            darktest: '#373B42',
             dark: '#555A65',
-            ligth: '#B4BED5',
-            ligthen: '#F5F8FA'
+            middle: 'lightgray',
+            light: '#B4BED5',
+            lightest: '#F5F8FA'
         }
     },
     shadows : {
@@ -40,7 +43,10 @@ const myTheme: DefaultTheme = {
     }
 }
 
-const Theme: React.FC = ({ children }) => (
+interface ThemeProps {
+    children?: React.ReactNode
+}
+const Theme = ({ children }: ThemeProps) => (
     <ThemeProvider theme={ myTheme }>
         <GlobalStyle />
         { children }

@@ -1,10 +1,12 @@
 import React from 'react'
 
+export enum ButtonType {
+    NORMAL,
+    INVERT
+}
+
 export interface StyledButton {
-    readonly bgColor?: string;
-    readonly textColor?: string;
-    readonly border?: string;
-    readonly bgColorHover?: string;
+    readonly buttonType?: ButtonType;
 }
 
 export interface Button extends StyledButton, React.ButtonHTMLAttributes<HTMLButtonElement> {

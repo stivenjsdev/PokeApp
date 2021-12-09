@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getPokemonByName } from '../services/PokemonService'
-import { IPokemon } from '../types/IPokemon'
+import { IPokemon } from '../interfaces/IPokemon'
 
 export const usePokemonSearch = () => {
     const [pokemon, setPokemon] = useState<IPokemon | undefined>(undefined)

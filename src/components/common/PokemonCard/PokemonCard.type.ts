@@ -1,12 +1,12 @@
-import { IPokemon } from '../../../types/IPokemon'
+import { IPokemon } from '../../../interfaces/IPokemon'
 import { Card } from '../../shared/Card/Card.type'
 
 export enum CardType {
-    A,
-    B
+    PREVIEW,
+    TEAM
 }
 
 export interface PokemonCard extends Card {
     readonly pokemon?: IPokemon | undefined;
-    readonly type: CardType
+    readonly cardType: CardType
 }

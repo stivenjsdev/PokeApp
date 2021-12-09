@@ -6,25 +6,17 @@ import * as Styled from './Sidebar.styled'
 import * as Types from './Sidebar.type'
 
 export const Sidebar = ({ children, ...properties }: Types.Sidebar) => {
-    const { pokemon, searchLoading, searchError, searchPokemon } = usePokemonContext()
-
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        const pokemonId = Math.floor(Math.random() * 897) + 1;
-        searchPokemon(pokemonId)
-    }
+    const { pokemon, searchLoading, searchError, searchRandomPokemon } = usePokemonContext()
 
     return (
         <Styled.Sidebar {...properties}>
             {pokemon &&
                 <PokemonCard
-                    type={CardType.A}
+                    cardType={CardType.PREVIEW}
                     pokemon={pokemon}
                 />
             }
-            <Styled.Button
-                onClick={handleClick}
-                bgColorHover="#F5F8FA"
-            >
+            <Styled.Button onClick={searchRandomPokemon}>
                 Walk through the tall grass
             </Styled.Button>
             {searchError && <Styled.Message>¡Error! not found</Styled.Message>}

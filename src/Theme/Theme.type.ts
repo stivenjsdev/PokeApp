@@ -9,6 +9,7 @@ declare module 'styled-components' {
         borderRadius: {
             normal: string;
             card: string;
+            search: string;
         };
         colors: {
             main: string;
@@ -17,12 +18,14 @@ declare module 'styled-components' {
             accent: string;
             white: string;
             black: string;
+            green: string;
             red: string;
             gray: {
-                darken: string;
+                darktest: string;
                 dark: string;
-                ligth: string;
-                ligthen: string;
+                middle: string;
+                light: string;
+                lightest: string;
             }
         };
         shadows : {

@@ -1,18 +1,19 @@
-import React, { createContext, useContext } from 'react'
-import { IPokemon } from '../types/IPokemon'
+import React, { createContext, useContext, useEffect } from 'react'
+import { IPokemon } from '../interfaces/IPokemon'
+import { getPokemonByName } from '../services/PokemonService'
 import * as Types from './PokemonContext.type'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-import { usePokemonSearch } from '../hooks/usePokemonSearch'
+import { useSearchService } from '../hooks/useSearchService'
 
 export const PokemonContext = createContext<Types.PokemonContext>({} as Types.PokemonContext)
 
 export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
     const {
-        pokemon,
+        item: pokemon,
         loading: searchLoading,
         error: searchError,
-        searchPokemon
-    } = usePokemonSearch()
+        searchItem: searchPokemon
+    } = useSearchService<IPokemon>(undefined, getPokemonByName)
     
     const {
         item: pokeTeam,
@@ -21,12 +22,18 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
         error: saveError
     } = useLocalStorage<IPokemon[]>('POKETEAM_V1', [])
 
+    const searchRandomPokemon = () => {
+        const pokemonId = Math.floor(Math.random() * 897) + 1;
+        searchPokemon(pokemonId)
+    }
+
     const catchPokemon = (pokemon: IPokemon) => {
         const hasPokemon = pokeTeam.find(elem => elem.id === pokemon.id)
         if (hasPokemon) {
             console.error({error: 'pokemon already exists'})
+            alert('pokemon already exists')
         } else {
-            const newPokeTeam = [...pokeTeam, pokemon]
+            const newPokeTeam = [pokemon, ...pokeTeam]
             savePokeTeam(newPokeTeam)
         }
     }
@@ -35,10 +42,17 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
         savePokeTeam(newPokeTeam)
     }
 
+    useEffect(() => {
+        console.log({message: 'execute useEffect PokemonContext'})
+        searchRandomPokemon()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return (
         <PokemonContext.Provider value={{
             pokemon,
             searchPokemon,
+            searchRandomPokemon,
             searchLoading,
             searchError,
             pokeTeam,
