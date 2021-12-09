@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
         /*font-family: 'Grenze', serif;*/
         font-weight: 400; 
         line-height: 1.37;
-        background-color: ${props => props.theme.colors.gray.ligthen};
+        background-color: ${props => props.theme.colors.gray.lightest};
     }
 `
 

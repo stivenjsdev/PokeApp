@@ -1,4 +1,6 @@
-const normalize = `
+import { css } from 'styled-components'
+
+const normalize = css`
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document

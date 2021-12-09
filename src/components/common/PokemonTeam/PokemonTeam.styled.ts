@@ -18,5 +18,6 @@ export const Title = styled.h1`
     text-align: center;
     font-weight: 200;
     font-size: ${props => props.theme.sizes.xxl + 'px'};
+    font-family: ${props => props.theme.fonts.secondary};
     margin: 10px;
 `
