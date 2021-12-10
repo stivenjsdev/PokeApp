@@ -32,6 +32,7 @@ export const Image = styled.img`
 
 export const Title = styled.h1`
     margin: 5px 0;
+    font-size: 28px;
     text-align: center;
 `
 
