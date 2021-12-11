@@ -10,13 +10,13 @@ export const App = styled.div`
         'sidebar'
         'main'
     ;
-    grid-template-rows: 80px min-content auto;
+    grid-template-rows: 5rem min-content auto;
     height: 100vh;
     /* grid-gap: 10px; */
 
     @media only screen and (min-width: 600px) {
-        grid-template-columns: 300px auto;
-        grid-template-rows: 65px auto auto;
+        grid-template-columns: 18.75rem auto;
+        grid-template-rows: 4.0625rem auto auto;
         grid-template-areas: 
             'header header'
             'sidebar main'

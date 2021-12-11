@@ -7,15 +7,15 @@ export const Header = styled.header`
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding: 5px 16px;
-    border-bottom: 1px solid ${props => props.theme.colors.gray.middle};
-    box-shadow: lightgrey 0px 0px 16px 1.8px;
-    background-color: ${props => props.theme.colors.white};
-    gap: 5px 0;
+    padding: 0.3125em 1em;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.gray.middle};
+    box-shadow: ${({ theme }) => theme.shadows.header};
+    background-color: ${({ theme }) => theme.colors.white};;
+    gap: 0.3125em 0;
 `
 
 export const Title = styled.h1`
     margin: 0;
-    font-size: ${props => props.theme.sizes.l + 'px'};
+    font-size: 1.375rem;
     font-family: ${props => props.theme.fonts.secondary};
 `

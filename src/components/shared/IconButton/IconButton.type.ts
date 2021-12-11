@@ -7,9 +7,9 @@ export enum Icon {
 }
 
 export enum IconSize {
-    SMALL = '14px',
-    NORMAL = '18px',
-    BIG = '22px',
+    SMALL = '0.875rem',
+    NORMAL = '1.125rem',
+    BIG = '1.375rem',
 }
 
 export enum IconColor {

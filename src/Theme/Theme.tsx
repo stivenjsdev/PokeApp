@@ -29,9 +29,10 @@ const myTheme: DefaultTheme = {
         }
     },
     shadows : {
-        elevate: '2px 2px 3px rgba(1, 35, 97, 0.25), -2px -2px 3px #FFFFFF',
+        elevate: '2px 2px 3px rgba(1, 35, 97, 0.25), -2px -2px 3px rgb(255, 255, 255)',
         down: '1px 1px 2px rgba(1, 35, 97, 0.25), -1px -1px 2px rgba(255, 255, 255, 0.75)',
-        card: '0 0px 10px 0 rgb(0 0 0 / 20%)'
+        card: '0 0px 10px 0 rgb(0 0 0 / 20%)',
+        header: '0px 0px 16px 1.8px lightgrey'
     },
     sizes: {
         xxl: 41,

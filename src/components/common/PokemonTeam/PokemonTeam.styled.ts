@@ -10,14 +10,14 @@ export const PokemonListContainer = styled.div`
     justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 16px;
-    gap: 10px 10px;
+    padding: 1em;
+    gap: 0.625em 0.625em;
 `
 
 export const Title = styled.h1`
     text-align: center;
     font-weight: 200;
-    font-size: ${props => props.theme.sizes.xxl + 'px'};
+    font-size: 2.5625rem;
     font-family: ${props => props.theme.fonts.secondary};
-    margin: 10px;
+    margin: 0.2439em;
 `

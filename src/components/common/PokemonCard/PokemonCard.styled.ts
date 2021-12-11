@@ -5,7 +5,7 @@ import * as Types from './PokemonCard.type'
 
 export const Card = styled(SimpleCard)<Types.PokemonCard>`
     position: relative;
-    min-height: 198px;
+    min-height: 12.375rem;
     ${props => {
         switch (props.cardType) {
             case Types.CardType.PREVIEW:
@@ -27,23 +27,23 @@ export const Card = styled(SimpleCard)<Types.PokemonCard>`
 export const Image = styled.img`
     display: block;
     margin: 0 auto;
-    width: 136px;
+    width: 8.5rem;
 `
 
 export const Title = styled.h1`
-    margin: 5px 0;
-    font-size: 28px;
+    font-size: 1.75rem;
     text-align: center;
+    margin: 0.178571429em 0;
 `
 
 export const PokemonTypes = styled.p`
-    margin: 5px 0;
     text-align: center;
+    margin: 0.3125em 0;
 `
 
 export const NotFoundText = styled.p`
+    font-size: 1.5625rem;
     text-align: center;
-    font-size: 25px;
 `
 
 const buttonStyles = css`
