@@ -32,6 +32,7 @@ declare module 'styled-components' {
             elevate: string;
             down: string;
             card: string;
+            header: string;
         };
         sizes: {
             xxl: number;

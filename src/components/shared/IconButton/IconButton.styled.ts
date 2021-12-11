@@ -14,7 +14,7 @@ export const IconButton = styled.button<Types.IconButtonStyled>`
     font-weight: 200;
     text-align: center;
     color: ${props => props.iconColor === Types.IconColor.WHITE ? props.theme.colors.white : props.theme.colors.black};
-    padding: 6px;
+    padding: 0.33em;
     border: none;
     cursor: pointer;
     transition: all 0.2s;

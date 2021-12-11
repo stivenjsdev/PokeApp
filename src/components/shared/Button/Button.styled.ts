@@ -4,11 +4,11 @@ import * as Types from './Button.type'
 export const Button = styled.button<Types.StyledButton>`
     font-family: ${props => props.theme.fonts.secondary};
     font-weight: 200;
-    font-size: ${props => props.theme.sizes.m + 'px'};
+    font-size: 1.125rem;
     color: ${props => props.theme.colors.black};
     border: 1px solid lightgray;
     border-radius: ${props => props.theme.borderRadius.normal};
-    padding: 6px;
+    padding: 0.34em;
     box-shadow: ${props => props.theme.shadows.elevate};
     cursor: pointer;
     transition: all 0.2s;

@@ -4,10 +4,10 @@ import * as Types from './Input.type'
 export const Input = styled.input<Types.StyledInput>`
     background-color: ${props => props.theme.colors.gray.lightest};
     color: ${props => props.theme.colors.gray.darktest};
-    font-size: ${props => props.theme.sizes.m + 'px'};
+    font-size: 1.125rem;
     border-radius: ${props => props.theme.borderRadius.search};
     margin: 0;
-    padding: 6px 6px 6px 35px;
+    padding: 0.33em 0.33em 0.33em 1.94em;
     font-family: ${props => props.theme.fonts.secondary};
     font-weight: 200;
     border: none;

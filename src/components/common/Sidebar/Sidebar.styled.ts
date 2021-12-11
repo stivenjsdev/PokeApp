@@ -6,10 +6,10 @@ export const Sidebar = styled.aside`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 15px 0px;
+    gap: 1em 0;
     
     background-color: ${props => props.theme.colors.white};
-    padding: 10px;
+    padding: 0.625em;
 `
 
 export const Message = styled.p``
