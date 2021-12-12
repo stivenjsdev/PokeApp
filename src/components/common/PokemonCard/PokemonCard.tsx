@@ -20,6 +20,20 @@ export const PokemonCard = ({
                             alt="pokemon image"
                         />
                         <Styled.Title>{pokemon.name}</Styled.Title>
+                        <Styled.Stats>
+                            <Styled.StatElement>
+                                hp: {pokemon.hp}
+                            </Styled.StatElement>
+                            <Styled.StatElement>
+                                attack: {pokemon.attack}
+                            </Styled.StatElement>
+                            <Styled.StatElement>
+                                defense: {pokemon.defense}
+                            </Styled.StatElement>
+                            <Styled.StatElement>
+                                speed: {pokemon.speed}
+                            </Styled.StatElement>
+                        </Styled.Stats>
                         <Styled.PokemonTypes>{pokemon.types}</Styled.PokemonTypes>
                         {cardType === Types.CardType.PREVIEW && 
                             <Styled.AddButton
