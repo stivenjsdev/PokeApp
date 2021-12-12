@@ -5,6 +5,11 @@ import * as Types from './PokemonCard.type'
 
 export const Card = styled(SimpleCard)<Types.PokemonCard>`
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3125em 0;
+    padding-bottom: 0.938em;
     min-height: 12.375rem;
     ${props => {
         switch (props.cardType) {
@@ -33,17 +38,36 @@ export const Image = styled.img`
 export const Title = styled.h1`
     font-size: 1.75rem;
     text-align: center;
-    margin: 0.178571429em 0;
+    /* margin: 0.178571429em 0; */
+    margin: 0;
 `
 
 export const PokemonTypes = styled.p`
     text-align: center;
-    margin: 0.3125em 0;
+    line-height: 1;
+    /* margin: 0.3125em 0; */
+    margin: 0;
 `
 
 export const NotFoundText = styled.p`
     font-size: 1.5625rem;
     text-align: center;
+`
+
+export const Stats = styled.div`
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+`
+
+export const StatElement = styled.p`
+    /* width: 50%; */
+    flex-basis: 50%;
+    font-size: 0.875rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+    color: ${({ theme }) => theme.colors.gray.darktest};
 `
 
 const buttonStyles = css`
