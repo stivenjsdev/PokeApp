@@ -32,7 +32,8 @@ export const IconButton = styled.button<Types.IconButtonStyled>`
                 `
             default:
                 return css`
-                    background-color: ${props => props.theme.colors.gray.lightest};
+                    /* background-color: ${props => props.theme.colors.gray.lightest}; */
+                    background-color: transparent;
                     border-radius: ${props => props.theme.borderRadius.search};
                     &:hover {
                         background-color: ${props => props.theme.colors.gray.middle};

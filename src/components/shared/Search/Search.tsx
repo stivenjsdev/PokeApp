@@ -37,17 +37,17 @@ export const Search = ({
 
     return (
         <Styled.SearchForm onSubmit={ handleSubmit } {...properties}>
+            <IconButton
+                icon={Icon.SEARCH}
+                iconColor={IconColor.BLACK}
+                iconSize={IconSize.SMALL}
+                type="submit"
+            />
             <Input 
                 placeholder={ placeholder }
                 value={ value }
                 onChange={ handleChange }
                 required
-            />
-            <IconButton
-                icon={Icon.SEARCH}
-                iconColor={IconColor.BLACK}
-                iconSize={IconSize.NORMAL}
-                type="submit"
             />
         </Styled.SearchForm>
     )
