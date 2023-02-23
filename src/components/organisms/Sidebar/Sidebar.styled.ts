@@ -8,10 +8,13 @@ export const Sidebar = styled.aside`
     align-items: center;
     gap: 1em 0;
     
-    background-color: ${props => props.theme.colors.white};
+    /* background-color: ${props => props.theme.colors.white}; */
+    background-image: linear-gradient(180deg, #c5e0cc , transparent);
     padding: 0.625em;
 `
 
 export const Message = styled.p``
 
-export const Button = styled(SimpleButton)``
+export const Button = styled(SimpleButton)`
+    box-shadow: 2px 2px 3px rgba(1,35,97,0.25);
+`

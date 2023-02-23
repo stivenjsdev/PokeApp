@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
+    position: relative;
     display: flex;
     flex-flow: row wrap;
     align-content: center;
