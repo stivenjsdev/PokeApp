@@ -2,7 +2,7 @@ import React from 'react'
 import * as Styled from './PokemonCard.styled'
 import * as Types from './PokemonCard.type'
 import { usePokemonContext } from '../../../Context'
-import { Icon, IconColor, IconSize } from '../../shared/IconButton/IconButton.type'
+import { Icon, IconColor, IconSize } from '../../atoms/IconButton/IconButton.type'
 
 export const PokemonCard = ({
     pokemon,

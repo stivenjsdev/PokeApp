@@ -16,7 +16,8 @@ export const PokemonListContainer = styled.div`
 
 export const Title = styled.h1`
     text-align: center;
-    font-weight: 200;
+    font-weight: 400;
+    /* text-decoration: overline; */
     font-size: 2.5625rem;
     font-family: ${props => props.theme.fonts.secondary};
     margin: 0.2439em;

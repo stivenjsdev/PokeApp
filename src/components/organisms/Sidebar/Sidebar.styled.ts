@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Button as SimpleButton } from '../../shared/Button'
+import { Button as SimpleButton } from '../../atoms/Button'
 
 export const Sidebar = styled.aside`
     display: flex;

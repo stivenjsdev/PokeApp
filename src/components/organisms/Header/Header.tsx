@@ -1,7 +1,7 @@
 import React from 'react'
 import * as Styled from './Header.styled'
 import * as Types from './Header.type'
-import { Search } from '../../shared/Search'
+import { Search } from '../../molecules/Search'
 
 export const Header = ({...properties}: Types.Header) => {
     return (

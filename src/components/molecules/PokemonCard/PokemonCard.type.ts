@@ -1,5 +1,5 @@
 import { IPokemon } from '../../../interfaces/IPokemon'
-import { Card } from '../../shared/Card/Card.type'
+import { Card } from '../../atoms/Card/Card.type'
 
 export enum CardType {
     PREVIEW,

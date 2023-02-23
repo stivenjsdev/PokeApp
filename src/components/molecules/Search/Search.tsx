@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import * as Styled from './Search.styled'
 import * as Types from './Search.type'
-import { IconButton } from '../IconButton'
-import { Input } from '../Input'
+import { IconButton } from '../../atoms/IconButton'
+import { Input } from '../../atoms/Input'
 import { usePokemonContext } from '../../../Context'
-import { Icon, IconColor, IconSize } from '../IconButton/IconButton.type'
+import { Icon, IconColor, IconSize } from '../../atoms/IconButton/IconButton.type'
 
 // Extract event types
 type InputEvent = React.ChangeEvent<HTMLInputElement>

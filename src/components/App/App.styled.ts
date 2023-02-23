@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Header as SimpleHeader } from '../common/Header'
-import { Sidebar as SimpleSidebar } from '../common/Sidebar'
-import { PokemonTeam } from '../common/PokemonTeam/'
+import { Header as SimpleHeader } from '../organisms/Header'
+import { Sidebar as SimpleSidebar } from '../organisms/Sidebar'
+import { PokemonTeam } from '../organisms/PokemonTeam'
 
 export const App = styled.div`
     display: grid;

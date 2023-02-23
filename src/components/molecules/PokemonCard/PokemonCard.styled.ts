@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import { Card as SimpleCard} from '../../shared/Card'
-import { IconButton } from '../../shared/IconButton'
+import { Card as SimpleCard} from '../../atoms/Card'
+import { IconButton } from '../../atoms/IconButton'
 import * as Types from './PokemonCard.type'
 
 export const Card = styled(SimpleCard)<Types.PokemonCard>`

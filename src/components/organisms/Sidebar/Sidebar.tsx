@@ -1,7 +1,7 @@
 import React from 'react'
 import { usePokemonContext } from '../../../Context'
-import { PokemonCard } from '../PokemonCard'
-import { CardType } from '../PokemonCard/PokemonCard.type'
+import { PokemonCard } from '../../molecules/PokemonCard'
+import { CardType } from '../../molecules/PokemonCard/PokemonCard.type'
 import * as Styled from './Sidebar.styled'
 import * as Types from './Sidebar.type'
 
