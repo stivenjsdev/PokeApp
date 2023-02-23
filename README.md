@@ -1,6 +1,6 @@
 # Poke APP
 
-Poke App is a responsive application created with React, TypeScript and Styled Components, using the poke api.
+Poke App is a responsive application created with React, TypeScript and Styled Components, using Atomic Design and Poke API.
 
 You can search for your favorite Pokemon or go into tall grass and find it randomly.
 
