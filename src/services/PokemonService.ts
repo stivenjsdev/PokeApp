@@ -6,7 +6,7 @@ export const getPokemonByName = async (name: string | number) => {
     try {
         const response = await fetch(URLPOKEMONAPI + name)
         const data = await response.json()
-        console.log(data.stats[1].stat.name + data.stats[1].base_stat)
+        // console.log(data.stats[1].stat.name + data.stats[1].base_stat)
         const pokemon: IPokemon = {
             id: data.id,
             // image: data.sprites.front_default,

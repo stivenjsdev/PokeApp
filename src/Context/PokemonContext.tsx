@@ -52,7 +52,7 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
             console.log("🚀 ~ file: PokemonContext.tsx:52 ~ pokemonFight ~ defenderPokemon:", defenderPokemon)
 
             if (attackerPokemon.hp && defenderPokemon.hp) {
-                const calculateDamage = (attacker: IPokemon, defender: IPokemon) => {
+                const calculateDamage = (attacker: IPokemon, defender: IPokemon): number => {
                     const effectiveDefense: number = Number(defender.defense) * 0.5
                     const damage: number = Number(attacker.attack) - effectiveDefense
                     return damage
@@ -69,7 +69,10 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
                     console.log("🚀 ~ file: PokemonContext.tsx:69 ~ pokemonFight ~ defenderPokemon.hp:", defenderPokemon.hp)
 
                     if(defenderPokemon.hp <= 0){
-                        console.log(`${defenderPokemon?.name} lose`)
+                        console.log(`${defenderPokemon?.name} lost`)
+                        alert('caught pokemon')
+                        catchPokemon(pokemon)
+                        searchRandomPokemon()
                         break
                     }
 
@@ -81,6 +84,7 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
 
                     if(attackerPokemon.hp <= 0){
                         console.log(`${attackerPokemon?.name} lose`)
+                        alert(`${attackerPokemon?.name} lose`)
                         break
                     }
                 }
