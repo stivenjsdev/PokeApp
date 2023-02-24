@@ -83,8 +83,8 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
                     console.log("🚀 ~ file: PokemonContext.tsx:80 ~ pokemonFight ~ attackerPokemon.hp:", attackerPokemon.hp)
 
                     if(attackerPokemon.hp <= 0){
-                        console.log(`${attackerPokemon?.name} lose`)
-                        alert(`${attackerPokemon?.name} lose`)
+                        console.log(`${attackerPokemon?.name} lost`)
+                        alert(`${attackerPokemon?.name} lost`)
                         break
                     }
                 }
