@@ -12,6 +12,7 @@ export interface PokemonContext {
     saveError: boolean
     catchPokemon: (pokemon: IPokemon) => void;
     deletePokemon: (pokemonId: number) => void;
+    pokemonFight: (pokemonId: number) => void;
 }
 
 export interface PokemonProvider {

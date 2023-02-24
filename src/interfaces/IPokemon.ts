@@ -4,8 +4,8 @@ export interface IPokemon {
     name: string;
     // types: Array<any>
     types: string;
-    hp?: string;
-    attack?: string;
-    defense?: string;
-    speed?: string;
+    hp?: number;
+    attack?: number;
+    defense?: number;
+    speed?: number;
 }
