@@ -3,6 +3,7 @@ import * as Styled from './PokemonCard.styled'
 import * as Types from './PokemonCard.type'
 import { usePokemonContext } from '../../../Context'
 import { Icon, IconColor, IconSize } from '../../atoms/IconButton/IconButton.type'
+import { ButtonType } from '../../atoms/Button/Button.type'
 
 export const PokemonCard = ({
     pokemon,
@@ -44,12 +45,19 @@ export const PokemonCard = ({
                             />
                         }
                         {cardType === Types.CardType.TEAM &&
+                        <>
                             <Styled.DeleteButton
                                 icon={Icon.TRASH}
                                 iconSize={IconSize.NORMAL}
                                 iconColor={IconColor.WHITE}
                                 onClick={() => deletePokemon(pokemon.id) }
                             />
+                            <Styled.AttackButton
+                                buttonType={ButtonType.TRANSPARENT}
+                            >
+                                attack
+                            </Styled.AttackButton>
+                        </>    
                         }
                     </>
                     : <Styled.NotFoundText>not found</Styled.NotFoundText>

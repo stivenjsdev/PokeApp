@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { Card as SimpleCard} from '../../atoms/Card'
 import { IconButton } from '../../atoms/IconButton'
+import { Button } from '../../atoms/Button'
 import * as Types from './PokemonCard.type'
 
 export const Card = styled(SimpleCard)<Types.PokemonCard>`
@@ -82,4 +83,9 @@ export const AddButton = styled(IconButton)`
 
 export const DeleteButton = styled(IconButton)`
     ${buttonStyles}
+`
+
+export const AttackButton = styled(Button)`
+    position: absolute;
+    top: 120px;
 `

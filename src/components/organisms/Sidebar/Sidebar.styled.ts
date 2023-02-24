@@ -15,6 +15,4 @@ export const Sidebar = styled.aside`
 
 export const Message = styled.p``
 
-export const Button = styled(SimpleButton)`
-    box-shadow: 2px 2px 3px rgba(1,35,97,0.25);
-`
+export const Button = styled(SimpleButton)``

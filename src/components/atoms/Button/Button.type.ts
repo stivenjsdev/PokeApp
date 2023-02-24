@@ -2,7 +2,8 @@ import React from 'react'
 
 export enum ButtonType {
     NORMAL,
-    INVERT
+    INVERT,
+    TRANSPARENT
 }
 
 export interface StyledButton {
