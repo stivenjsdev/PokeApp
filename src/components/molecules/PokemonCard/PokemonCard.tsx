@@ -10,7 +10,7 @@ export const PokemonCard = ({
     cardType,
     ...properties
 }: Types.PokemonCard) => {
-    const { deletePokemon, pokemonFight } = usePokemonContext()
+    const { deletePokemon, pokemonFight, pokeTeam } = usePokemonContext()
     return (
         <Styled.Card cardType={cardType} {...properties}>
             {
@@ -36,21 +36,21 @@ export const PokemonCard = ({
                             </Styled.StatElement>
                         </Styled.Stats>
                         <Styled.PokemonTypes>{pokemon.types}</Styled.PokemonTypes>
-                        {cardType === Types.CardType.TEAM &&
-                        <>
+                        {cardType === Types.CardType.TEAM && pokeTeam.length > 1 &&
                             <Styled.DeleteButton
                                 icon={Icon.TRASH}
                                 iconSize={IconSize.NORMAL}
                                 iconColor={IconColor.WHITE}
                                 onClick={() => deletePokemon(pokemon.id)}
                             />
+                        }
+                        {cardType === Types.CardType.TEAM &&
                             <Styled.AttackButton
                                 buttonType={ButtonType.TRANSPARENT}
                                 onClick={() => pokemonFight(pokemon.id)}
                             >
                                 attack
                             </Styled.AttackButton>
-                        </>    
                         }
                     </>
                     : <Styled.NotFoundText>not found</Styled.NotFoundText>

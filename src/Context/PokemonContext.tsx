@@ -99,9 +99,24 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
 
     useEffect(() => {
         console.log({message: 'execute useEffect PokemonContext'})
-        searchRandomPokemon()
+        async function fetchPokemon() {
+            await searchRandomPokemon()
+        }
+        fetchPokemon()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    useEffect(() => {
+        console.log({message: 'validating poketeam...'})
+        if (pokeTeam.length <= 0 && pokemon) {
+            console.log("🚀 ~ file: PokemonContext.tsx:112 ~ useEffect ~ pokeTeam.length:", pokeTeam.length, "starting new game")   
+            const newPokeTeam = [...pokeTeam, pokemon]
+            savePokeTeam(newPokeTeam)
+            searchRandomPokemon()
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [pokemon])
+    
 
     return (
         <PokemonContext.Provider value={{
