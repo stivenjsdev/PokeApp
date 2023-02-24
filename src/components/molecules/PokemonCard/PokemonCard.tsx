@@ -10,7 +10,7 @@ export const PokemonCard = ({
     cardType,
     ...properties
 }: Types.PokemonCard) => {
-    const { catchPokemon, deletePokemon, pokemonFight } = usePokemonContext()
+    const { deletePokemon, pokemonFight } = usePokemonContext()
     return (
         <Styled.Card cardType={cardType} {...properties}>
             {
@@ -36,14 +36,6 @@ export const PokemonCard = ({
                             </Styled.StatElement>
                         </Styled.Stats>
                         <Styled.PokemonTypes>{pokemon.types}</Styled.PokemonTypes>
-                        {cardType === Types.CardType.PREVIEW && 
-                            <Styled.AddButton
-                                icon={Icon.PLUS}
-                                iconSize={IconSize.NORMAL}
-                                iconColor={IconColor.WHITE}
-                                onClick={() => catchPokemon(pokemon)}
-                            />
-                        }
                         {cardType === Types.CardType.TEAM &&
                         <>
                             <Styled.DeleteButton
