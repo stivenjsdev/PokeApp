@@ -12,31 +12,32 @@ export const Button = styled.button<Types.StyledButton>`
     box-shadow: ${props => props.theme.shadows.elevate};
     cursor: pointer;
     transition: all 0.2s;
-    ${props => { 
-        if (props.buttonType === Types.ButtonType.INVERT) {
-            return css`
-                background-color: ${props => props.theme.colors.gray.lightest};
-                &:hover {
+    ${props => {
+        switch (props.buttonType) {
+            case Types.ButtonType.INVERT:
+                return css`
+                    background-color: ${props => props.theme.colors.gray.lightest};
+                    &:hover {
+                        background-color: ${props => props.theme.colors.white};
+                        /* transform: scale(1.08); */
+                    }
+                `
+            case Types.ButtonType.TRANSPARENT:
+                return css`
+                    background-color: transparent;
+                    &:hover {
+                        background-color: ${props => props.theme.colors.gray.lightest};
+                        transform: scale(1.08);
+                    }
+                `
+            default:
+                return css`
                     background-color: ${props => props.theme.colors.white};
-                    /* transform: scale(1.08); */
-                }
-            `
-        } else if (props.buttonType === Types.ButtonType.TRANSPARENT) {
-            return css`
-                background-color: transparent;
-                &:hover {
-                    background-color: ${props => props.theme.colors.gray.lightest};
-                    /* transform: scale(1.08); */
-                }
-            `
-        } else {
-            return css`
-                background-color: ${props => props.theme.colors.white};
-                &:hover {
-                    background-color: ${props => props.theme.colors.gray.lightest};
-                    /* transform: scale(1.08); */
-                }
-            `
+                    &:hover {
+                        background-color: ${props => props.theme.colors.gray.lightest};
+                        /* transform: scale(1.08); */
+                    }
+                `
         }
     }}
     &:active {
