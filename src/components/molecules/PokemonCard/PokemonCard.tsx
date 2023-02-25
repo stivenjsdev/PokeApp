@@ -4,6 +4,7 @@ import * as Types from './PokemonCard.type'
 import { usePokemonContext } from '../../../Context'
 import { Icon, IconColor, IconSize } from '../../atoms/IconButton/IconButton.type'
 import { ButtonType } from '../../atoms/Button/Button.type'
+import { useAnimation } from '../../../hooks/useAnimation'
 
 export const PokemonCard = ({
     pokemon,
@@ -11,12 +12,26 @@ export const PokemonCard = ({
     ...properties
 }: Types.PokemonCard) => {
     const { deletePokemon, pokemonFight, pokeTeam } = usePokemonContext()
+    const {
+        vibrating,
+        setVibrating
+    } = useAnimation()
+
+    const handleClick = (pokemonId: number) => {
+        setVibrating(true)
+        setTimeout(() => {
+            pokemonFight(pokemonId)
+            setVibrating(false)
+        }, 700);
+    }
+
     return (
         <Styled.Card cardType={cardType} {...properties}>
             {
                 pokemon
                     ? <>
                         <Styled.Image
+                            vibrating={vibrating}
                             src={pokemon.image}
                             alt="pokemon image"
                         />
@@ -47,7 +62,7 @@ export const PokemonCard = ({
                         {cardType === Types.CardType.TEAM &&
                             <Styled.AttackButton
                                 buttonType={ButtonType.TRANSPARENT}
-                                onClick={() => pokemonFight(pokemon.id)}
+                                onClick={() => handleClick(pokemon.id)}
                             >
                                 attack
                             </Styled.AttackButton>

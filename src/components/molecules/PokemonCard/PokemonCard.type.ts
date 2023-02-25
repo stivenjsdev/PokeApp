@@ -6,6 +6,10 @@ export enum CardType {
     TEAM
 }
 
+export interface ImageProps {
+    vibrating: boolean;
+}
+
 export interface PokemonCard extends Card {
     readonly pokemon?: IPokemon | undefined;
     readonly cardType: CardType
