@@ -1,3 +1,4 @@
+import { AlertType } from "../components/atoms/Alert/Alert.type";
 import { IPokemon } from "../interfaces/IPokemon";
 
 export interface PokemonContext {
@@ -13,6 +14,10 @@ export interface PokemonContext {
     catchPokemon: (pokemon: IPokemon) => void;
     deletePokemon: (pokemonId: number) => void;
     pokemonFight: (pokemonId: number) => void;
+    message: string;
+    alertType: AlertType;
+    showAlert: boolean;
+    setShowAlert: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface PokemonProvider {

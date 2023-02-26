@@ -4,6 +4,8 @@ import { getPokemonByName } from '../services/PokemonService'
 import * as Types from './PokemonContext.type'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import { useSearchService } from '../hooks/useSearchService'
+import { useAlert } from '../hooks/useAlert'
+import { AlertType } from '../components/atoms/Alert/Alert.type'
 
 export const PokemonContext = createContext<Types.PokemonContext>({} as Types.PokemonContext)
 
@@ -21,6 +23,15 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
         loading: saveLoading,
         error: saveError
     } = useLocalStorage<IPokemon[]>('POKETEAM_V1', [])
+
+    const {
+        message,
+        showAlert,
+        setMessage,
+        setShowAlert,
+        alertType,
+        setAlertType
+    } = useAlert()
 
     const searchRandomPokemon = () => {
         const pokemonId = Math.floor(Math.random() * 897) + 1;
@@ -41,19 +52,23 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
         const newPokeTeam = pokeTeam.filter(pokemon => pokemon.id !== pokemonId)
         savePokeTeam(newPokeTeam)
     }
-    const pokemonFight = (pokemonId: number) => {
+    const pokemonFight = async (pokemonId: number) => {
         const foundedPokemon: IPokemon | undefined = pokeTeam.find(pokemon => pokemon.id === pokemonId)
         
         if (foundedPokemon && pokemon) {
             const attackerPokemon: IPokemon = { ...foundedPokemon }
             const defenderPokemon: IPokemon = { ...pokemon }
 
-            console.log("🚀 ~ file: PokemonContext.tsx:51 ~ pokemonFight ~ attackerPokemon:", attackerPokemon)
-            console.log("🚀 ~ file: PokemonContext.tsx:52 ~ pokemonFight ~ defenderPokemon:", defenderPokemon)
-
             if (attackerPokemon.hp && defenderPokemon.hp) {
+                const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+                setMessage(`${attackerPokemon.name} attacks ${defenderPokemon.name}`)
+                setAlertType(AlertType.WARNING)
+                setShowAlert(true)
+                await delay(1700)
+                setShowAlert(false)
+
                 const calculateDamage = (attacker: IPokemon, defender: IPokemon): number => {
-                    const effectiveDefense: number = Number(defender.defense) * 0.5
+                    const effectiveDefense: number = Number(defender.defense) * 0.4
                     const damage: number = Number(attacker.attack) - effectiveDefense
                     return damage
                 }
@@ -65,12 +80,14 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
                     const attackerDamage = calculateDamage(attackerPokemon, defenderPokemon)
                     defenderPokemon.hp -= attackerDamage
 
-                    console.log("🚀 ~ file: PokemonContext.tsx:68 ~ pokemonFight ~ attackerDamage:", attackerDamage)
-                    console.log("🚀 ~ file: PokemonContext.tsx:69 ~ pokemonFight ~ defenderPokemon.hp:", defenderPokemon.hp)
+                    console.log("🔪 attackerDamage:", attackerDamage)
+                    console.log("❤ defenderPokemon.hp:", defenderPokemon.hp)
 
                     if(defenderPokemon.hp <= 0){
-                        console.log(`${defenderPokemon?.name} lost`)
-                        alert('caught pokemon')
+                        console.log(`${attackerPokemon.name} wins!, you have captured ${defenderPokemon.name}`)
+                        setMessage(`${attackerPokemon.name} wins!, you have captured ${defenderPokemon.name}`)
+                        setAlertType(AlertType.SUCCESS)
+                        setShowAlert(true)
                         catchPokemon(pokemon)
                         searchRandomPokemon()
                         break
@@ -79,20 +96,22 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
                     const defenderDamage = calculateDamage(defenderPokemon, attackerPokemon)
                     attackerPokemon.hp -= defenderDamage
 
-                    console.log("🚀 ~ file: PokemonContext.tsx:79 ~ pokemonFight ~ defenderDamage:", defenderDamage)
-                    console.log("🚀 ~ file: PokemonContext.tsx:80 ~ pokemonFight ~ attackerPokemon.hp:", attackerPokemon.hp)
+                    console.log("🔪 defenderDamage:", defenderDamage)
+                    console.log("❤ attackerPokemon.hp:", attackerPokemon.hp)
 
                     if(attackerPokemon.hp <= 0){
-                        console.log(`${attackerPokemon?.name} lost`)
-                        alert(`${attackerPokemon?.name} lost`)
+                        console.log(`${attackerPokemon.name} has been defeated by ${defenderPokemon.name}`)
+                        setMessage(`${attackerPokemon.name} has been defeated by ${defenderPokemon.name}`)
+                        setAlertType(AlertType.ERROR)
+                        setShowAlert(true)
                         break
                     }
                 }
             } else {
-                console.error("🚀 ~ file: PokemonContext.tsx:88 ~ pokemonFight ~ no hp found")
+                console.error("🚀 ~ file: PokemonContext.tsx:110 ~ pokemonFight ~ no hp found")
             }
         } else {
-            console.error("🚀 ~ file: PokemonContext.tsx:91 ~ pokemonFight ~ no pokemon found or no hp found")
+            console.error("🚀 ~ file: PokemonContext.tsx:113 ~ pokemonFight ~ no pokemon found")
         }
 
     }
@@ -109,7 +128,7 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
     useEffect(() => {
         console.log({message: 'validating poketeam...'})
         if (pokeTeam.length <= 0 && pokemon) {
-            console.log("🚀 ~ file: PokemonContext.tsx:112 ~ useEffect ~ pokeTeam.length:", pokeTeam.length, "starting new game")   
+            console.log("🚀 ~ file: PokemonContext.tsx:130 ~ useEffect ~ pokeTeam.length:", pokeTeam.length, "starting new game")   
             const newPokeTeam = [...pokeTeam, pokemon]
             savePokeTeam(newPokeTeam)
             searchRandomPokemon()
@@ -131,7 +150,11 @@ export const PokemonProvider = ({ children }: Types.PokemonProvider) => {
             saveError,
             catchPokemon,
             deletePokemon,
-            pokemonFight
+            pokemonFight,
+            message,
+            alertType,
+            showAlert,
+            setShowAlert
         }}>
             { children }
         </PokemonContext.Provider>
