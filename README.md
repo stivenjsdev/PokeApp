@@ -1,14 +1,28 @@
 # Poke APP
 
-Poke App is a responsive application created with React, TypeScript and Styled Components, using Atomic Design and Poke API.
+Poke App is a responsive application created with React and TypeScript. The game starts giving you a random pokemon, you must use this pokemon to catch the pokemons you find through the tall grass. Each pokemon you catch will be added to your team, and you can use it to catch more pokemons.
 
-You can search for your favorite Pokemon or go into tall grass and find it randomly.
+Design patterns used:
+- Compound Component
+- Provider/Consumer
+- Functional Component
+- Hooks and Custom Hooks
+- Prop Drilling
+- Container and Presentational
+- CSS in Js with Styled Components
+
+Methodologies used:
+- Atomic Design
+
+Architectures used:
+- Component-Based Architecture
+
 
 ## Deployment
 
 https://ourpokeapp.netlify.app/
 
-## Setting
+## Settings
 
 - Node version: 14.18.1
 - Yarn version: 1.22.15
