@@ -4,7 +4,7 @@ import * as Types from './Input.type'
 export const Input = styled.input<Types.StyledInput>`
     /* background-color: ${props => props.theme.colors.gray.lightest}; */
     background-color: transparent;
-    color: ${props => props.theme.colors.gray.darktest};
+    color: ${props => props.theme.colors.gray.darkest};
     font-size: 1.125rem;
     border-radius: ${props => props.theme.borderRadius.search};
     margin: 0;

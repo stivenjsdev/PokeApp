@@ -20,8 +20,13 @@ const myTheme: DefaultTheme = {
         black: '#000',
         green: '#0C9',
         red: 'lightcoral',
+        alert: {
+            success: '#28a745',
+            warning: '#FFA500',
+            error: '#dc3545'
+        },
         gray: {
-            darktest: '#373B42',
+            darkest: '#373B42',
             dark: '#555A65',
             middle: 'lightgray',
             light: '#B4BED5',

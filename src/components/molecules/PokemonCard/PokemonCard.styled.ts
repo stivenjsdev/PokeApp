@@ -12,18 +12,14 @@ export const Card = styled(SimpleCard) <Types.PokemonCard>`
     gap: 0.3125em 0;
     padding-bottom: 0.938em;
     min-height: 198px;
-    ${props => {
+    background-color: ${props => {
         switch (props.cardType) {
             case Types.CardType.PREVIEW:
-                return css`
-                    background-color: ${props => props.theme.colors.gray.lightest};
-                `
+                return props.theme.colors.gray.lightest
             case Types.CardType.TEAM:
-                return css`
-                    background-color: ${props => props.theme.colors.white};
-                `
+                return props.theme.colors.white
         }
-    }}
+    }};
     &:hover {
         /* transform: scale(1.01); */
         box-shadow: ${props => props.theme.shadows.card};
@@ -99,7 +95,7 @@ export const StatElement = styled.p`
     font-weight: 300;
     text-align: center;
     margin: 0;
-    color: ${({ theme }) => theme.colors.gray.darktest};
+    color: ${({ theme }) => theme.colors.gray.darkest};
 `
 
 const buttonStyles = css`

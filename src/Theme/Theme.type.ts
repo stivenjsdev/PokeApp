@@ -20,8 +20,13 @@ declare module 'styled-components' {
             black: string;
             green: string;
             red: string;
+            alert: {
+                success: string;
+                warning: string;
+                error: string;
+            }
             gray: {
-                darktest: string;
+                darkest: string;
                 dark: string;
                 middle: string;
                 light: string;
