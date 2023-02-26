@@ -11,6 +11,7 @@ const appear = keyframes`
 `
 
 export const Alert = styled.div<Types.AlertProps>`
+  cursor: pointer;
   position: fixed;
   bottom: 5px;
   display: flex;
