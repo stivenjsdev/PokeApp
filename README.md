@@ -49,6 +49,11 @@ Visual Studio Code Plugins:
 - Typescript React code snippets
 - styled-components-snippets
 - vscode-styled-components
+- Code Spell Checker
+- px to rem
+- Template String Converter
+- indent-rainbow
+- Total TypeScript
 
 Git Flow:
 ```
