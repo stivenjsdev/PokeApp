@@ -2,6 +2,7 @@
 
 Poke App is a responsive application created with React and TypeScript. The game starts giving you a random pokemon, you must use this pokemon to catch the pokemons you find through the tall grass. Each pokemon you catch will be added to your team, and you can use it to catch more pokemons.
 
+
 Design patterns used:
 - Compound Component
 - Provider/Consumer
@@ -17,6 +18,15 @@ Methodologies used:
 Architectures used:
 - Component-Based Architecture
 
+## Screenshots
+
+- Desktop
+
+![poke-desktop](./github-assets/poke-desktop.png)
+
+- Mobile
+
+<img src="./github-assets/poke-mobile.png" alt="poke-mobile" width="200" height="400" >
 
 ## Deployment
 
