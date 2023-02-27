@@ -26,7 +26,7 @@ Architectures used:
 
 - Mobile
 
-<img src="./github-assets/poke-mobile.png" alt="poke-mobile" width="200" height="400" >
+<img src="./github-assets/poke-mobile.png" alt="poke-mobile" width="210" height="420" >
 
 ## Deployment
 
@@ -53,6 +53,11 @@ Visual Studio Code Plugins:
 Git Flow:
 ```
 https://danielkummer.github.io/git-flow-cheatsheet/
+```
+
+Icons:
+```
+https://fontawesome.com/v4/icons/
 ```
 
 ## How to start
