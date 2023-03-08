@@ -32,6 +32,28 @@ Architectures used:
 
 https://ourpokeapp.netlify.app/
 
+## Settings with Docker
+
+Start docker:
+```bash
+sudo dockerd
+```
+
+Create and build:
+```bash
+sudo docker compose up
+```
+
+Open terminal:
+```
+sudo docker compose exec -it pokeapp /bin/sh
+```
+
+Close terminal:
+```
+exit
+```
+
 ## Settings
 
 - Node version: 14.18.1

@@ -1,0 +1,9 @@
+services:
+  pokeapp:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/pokeapp
+      - /pokeapp/node_modules
+    command: yarn start
